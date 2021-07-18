@@ -1,3 +1,20 @@
+<div class="panel panel-default">
+    <div class="panel-body">
+    <div class="status-upload nopaddingbtm">
+        <form action="./PostController.php" method="post" enctype="multipart/form-data">
+        <textarea class="form-control" name="body" placeholder="What are you doing right now?"></textarea>
+        <br>
+        <ul class="nav nav-pills pull-left ">
+            <!-- <li><a title="" data-toggle="tooltip" data-placement="bottom" data-original-title="Picture"><i class="glyphicon glyphicon-picture"></i></a></li> -->
+            <li><label ><b>Image</b></label></li>
+            <li><input type="file" name="postImg"></li>
+
+        </ul>
+        <button type="submit" name="addPost" class="btn btn-success pull-right" > Share</button>
+        </form>
+    </div>
+    </div>
+</div>
 <div class="card rounded">
                         <div class="card-header">
                             <div class="d-flex align-items-center justify-content-between">
