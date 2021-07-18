@@ -1,5 +1,5 @@
 <div class="form-popup" id="myForm">
-    <form method="POST" action="post_controler.php" class="form-container">
+    <form method="POST" action="../PostController.php" class="form-container">
         <h1>Add your Post</h1>
         <label for="post"><b>Post</b></label>
         <textarea class="form-control" placeholder="Leave a Post here" name="body" id="post" style="height: 100px"></textarea>
