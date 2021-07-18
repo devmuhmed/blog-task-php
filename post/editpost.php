@@ -1,6 +1,6 @@
 <?php 
 // connection
-require_once("./classes/db.php");
+include("../classes/db.php");
  $conn= new db();
 
 $allPosts=$conn->getAllData("posts","Post_Id={$_GET['id']}");
