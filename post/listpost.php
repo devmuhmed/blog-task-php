@@ -80,7 +80,7 @@ echo "
         <div class='card-header'>
             <div class='d-flex align-items-center justify-content-between'>
                 <div class='d-flex align-items-center'>
-                    <img class='img-xs rounded-circle' src='../images/{$user['Profile_Img']}' alt=''>
+                    <img class='img-xs rounded-circle' src='images/{$user['Profile_Img']}' alt=''>
                     <div class='ml-2'>
                         <p>{$user['fname']} {$user['lname']}</p>
                         <p class='tx-11 text-muted'>{$post['Date']}</p>
@@ -110,11 +110,7 @@ echo "
         </div>
         <div class='card-body'>
             <p class='mb-3 tx-14'>{$post['Body']}</p>
-            ";?>
-                <?php
-                if($post['Image']){
-                echo "<img src='images/{$post['Image']}' width='500' height='250' class='class='img-fluid' mb-4' alt='postImg'> " ;};
-                echo"
+            <img src='images/{$_POST['Image']}'>
         </div>
         <div class='card-footer'>
             <div class='d-flex post-actions'>
