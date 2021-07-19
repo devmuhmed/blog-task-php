@@ -110,7 +110,7 @@ echo "
         </div>
         <div class='card-body'>
             <p class='mb-3 tx-14'>{$post['Body']}</p>
-            <img src='images/{$_POST['Image']}'>
+            <img src='images/{$post['Image']}' width='500' height='250' class='mb-4' alt='postImg'>
         </div>
         <div class='card-footer'>
             <div class='d-flex post-actions'>
