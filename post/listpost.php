@@ -103,7 +103,7 @@ echo "
                                 <span class=''>Edit</span></a>
                         <a class='dropdown-item d-flex align-items-center' href='deletePost.php?id={$post['Post_Id']}'>
                                 <span class=''>Delete</span></a>
-                        
+
                     </div>
                 </div>
             </div>
