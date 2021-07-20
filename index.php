@@ -1,4 +1,8 @@
 <?php
+    if (!isset($_COOKIE['userid'])){
+        header("location:login.php");
+    } 
+
     include "Layouts/htmlHeader.php";
 ?>
 <body>
@@ -6,7 +10,7 @@
 <div class="container">
     <div class="form-php row">
         <?php require("post/addpost.php");?>
-        <?php //require("post/editpost.php");?>
+        
     </div>
 <div class="profile-page tx-13">
     <?php 

@@ -1,18 +1,24 @@
+<?php 
+$connection = new PDO("mysql:host=localhost; dbname=Facebook","root","");
+$d=$connection->query("select * from users where User_Id={$_GET['id']}");
+$updateprofile=$d->fetch(PDO::FETCH_ASSOC);
 
+// var_dump($updateprofile);
+
+?>
         <!-- middle wrapper start -->
         <div class="middle col-8 text-center">
             
-        <form action="" method="POST" enctype="multipart/form-data">
+        <form action="updateprofile.php" method="POST" enctype="multipart/form-data">
          <div class="row gutters-sm " >
             
                 <div class="col-6 mb-3" style="margin: 0 auto;">
                 <div class="card">
                     <div class="card-body">
                     <div class="d-flex flex-column align-items-center text-center">
-                        <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle" width="150">
+                        <img src="images/<?php echo $updateprofile['Profile_Img']?>" alt="Admin" class="rounded-circle" width="150">
                         <div class="mt-3">
-                        <input type="text" value="John Doe" class="form-control" name="fname">
-                        <button class="btn btn-primary mt-2">Upload New image</button>
+                        <input type="file" class="form-control" name="Profile_Img">   
                         </div>
                     </div>
                     </div>
@@ -23,55 +29,62 @@
                 <div class="card mb-3">
                     <div class="card-body">
                     <div class="row">
-                        <div class="col-sm-3">
-                        <h6 class="mb-0">Full Name</h6>
+                        <div class="col-sm-4">
+                        <h6 class="mb-0">First Name</h6>
                         </div>
-                        <div class="col-sm-9 text-secondary">
-                        <input type="text" value="Kenneth Valdez" class="form-control" name="fullname">
+                        <div class="col-sm-8 text-secondary">
+                        <input type="text" value="<?php echo $updateprofile['fname']?>" class="form-control" name="fname">
                         </div>
                     </div>
                     <hr>
                     <div class="row">
-                        <div class="col-sm-3">
+                        <div class="col-sm-4">
+                        <h6 class="mb-0">Last Name</h6>
+                        </div>
+                        <div class="col-sm-8 text-secondary">
+                        <input type="text" value="<?php echo $updateprofile['lname']?>" class="form-control" name="lname">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-4">
+                        <h6 class="mb-0" hidden>id</h6>
+                        </div>
+                        <div class="col-sm-8 text-secondary">
+                        <input hidden type="text" value="<?php echo $_GET['id']?>" class="form-control" name="id">
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-sm-4">
                         <h6 class="mb-0">Email</h6>
                         </div>
-                        <div class="col-sm-9">
-                        <input type="email" value="fip@jukmuh.align" class="form-control" name="email">
+                        <div class="col-sm-8">
+                        <input type="email" value="<?php echo $updateprofile['Email']?>" class="form-control" name="Email">
                         </div>
                     </div>
                     <hr>
                     <div class="row">
-                        <div class="col-sm-3">
-                        <h6 class="mb-0">Phone</h6>
-                        </div>
-                        <div class="col-sm-9 text-secondary">
-                        <input type="text" value="(239) 816-9029" class="form-control" name="phone">
-                        </div>
-                    </div>
-                    <hr>
-                    <div class="row">
-                        <div class="col-sm-3">
-                        <h6 class="mb-0">Mobile</h6>
-                        </div>
-                        <div class="col-sm-9 text-secondary">
-                        
-                        <input type="text" value="(320) 380-4539" class="form-control" name="fname">
-                        </div>
-                    </div>
-                    <hr>
-                    <div class="row">
-                        <div class="col-sm-3">
+                        <div class="col-sm-4">
                         <h6 class="mb-0">Address</h6>
                         </div>
-                        <div class="col-sm-9 text-secondary">
+                        <div class="col-sm-8 text-secondary">
+                        <input type="text" value="<?php echo $updateprofile['Address']?>" class="form-control" name="Address">
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-sm-4">
+                        <h6 class="mb-0">Username</h6>
+                        </div>
+                        <div class="col-sm-8 text-secondary">
                         
-                        <input type="text" value="Bay Area, San Francisco, CA" class="form-control">
+                        <input type="text" value="<?php echo $updateprofile['Username']?>" class="form-control" name="Username">
                         </div>
                     </div>
                     <hr>
                     <div class="row">
                         <div class="col-sm-12">
-                        <a class="btn btn-info " target="__blank" href="https://www.bootdey.com/snippets/view/profile-edit-data-and-skills">Save</a>
+                        <button type="submit" class="btn btn-info">Save</button>
                         </div>
                     </div>
                     </div>

@@ -1,4 +1,7 @@
 <?php
+  if (!isset($_COOKIE['userid'])){
+    header("location:login.php");
+} 
   include "Layouts/htmlHeader.php";
 ?>
 <body>
@@ -30,6 +33,7 @@
     </div>
 </div>
 </div>
+<script src="Layouts/js/popup.js"></script>
 
 <script type="text/javascript">
 

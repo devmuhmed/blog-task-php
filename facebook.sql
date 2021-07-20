@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 19, 2021 at 02:07 AM
+-- Generation Time: Jul 20, 2021 at 11:15 AM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 7.3.27
 
@@ -35,6 +35,13 @@ CREATE TABLE `comments` (
   `Date` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `comments`
+--
+
+INSERT INTO `comments` (`Comment_Id`, `user_id`, `Post_Id`, `Body`, `Date`) VALUES
+(1, 2, 11, 'hey ,what`s up man ', '2021-07-20 02:45:02');
+
 -- --------------------------------------------------------
 
 --
@@ -54,15 +61,8 @@ CREATE TABLE `posts` (
 --
 
 INSERT INTO `posts` (`Post_Id`, `User_Id`, `Body`, `Image`, `Date`) VALUES
-(4, 1, 'qqqqqqqqqqqqqqqqqqqqq', 'screen02.jpg', '2021-07-18 00:25:50'),
-(5, 1, 'hellllllllllo', 'screen.jpg', '2021-07-18 04:35:31'),
-(6, 1, 'sssssssssss', 'screen.jpg', '2021-07-18 12:29:53'),
-(7, 1, 'ssssssss', 'screen03.jpg', '2021-07-18 12:30:07'),
-(8, 1, 'aaaaaaaaaaaaaaa', '', '2021-07-18 12:30:36'),
-(9, 1, '', '', '2021-07-18 21:59:52'),
-(10, 1, 'fdasfsdafsdafsd', '79cdb06ce76e581359614a27ee490f', '2021-07-18 22:00:05'),
-(11, 1, 'welcom my name is mohamed ', 'pic.jpg', '2021-07-19 01:57:46'),
-(12, 1, 'hello from the other side ', 'mohamed.jpg', '2021-07-19 02:04:54');
+(11, 2, 'welcom my name is mohamed ', 'pic.jpg', '2021-07-19 01:57:46'),
+(13, 1, 'Hello from the other side of view profile', 'alquds.jpg', '2021-07-20 08:37:34');
 
 -- --------------------------------------------------------
 
@@ -87,7 +87,13 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`User_Id`, `fname`, `lname`, `Username`, `Address`, `Email`, `Password`, `Gender`, `Profile_Img`) VALUES
-(1, 'islam', 'osama', 'islamheza', 'damitta', 'islam@gmail.com', '123', 'Male', 'islam.jpg');
+(1, 'islam', 'osama', 'islamheza', 'damitta', 'islam@gmail.com', '123', 'Male', 'sea.jpg'),
+(2, 'mohamed', 'ibrahim', 'moha', 'Tanta', 'mohamed@ibrahim.co', '321', 'Male', 'pic.jpg'),
+(3, ' mohamed', ' hassan', 'moha', 'Zefta ', ' mo@ibra.co', '123', 'Male', ''),
+(4, ' mohamed', ' Hassan', 'mo', 'Tanta ', ' mo@hassan.co', '123', 'Male', ''),
+(5, ' m', ' m', 'm', 'm ', ' m@jkklj.co', 'm', 'Male', ''),
+(6, ' mohamed', ' hassan', 'moha', 'nahtay ', ' mo@gmail.com', '123', 'Male', 'alquds.jpg'),
+(7, ' h', ' h', 'h', 'jklk ', ' h@h.co', '123', 'Male', 'sea.jpg');
 
 --
 -- Indexes for dumped tables
@@ -122,19 +128,19 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `Comment_Id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `Comment_Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `Post_Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `Post_Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `User_Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `User_Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- Constraints for dumped tables

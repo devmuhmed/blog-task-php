@@ -18,7 +18,7 @@ class db{
         return $this->connection->query("select $cols from $table where $condition");
      } 
     public function getAllData($table ,$condition=1){
-       return $this->connection->query("select * from $table where $condition");
+       return $this->connection->query("select * from $table where $condition ORDER BY date DESC");
     }
     public function deleteData($table ,$condition=1){
         return $this->connection->query("delete from $table where $condition");
@@ -28,6 +28,9 @@ class db{
     }
     public function updateData($table ,$data , $condition){
         return $this->connection->query("update $table set $data where $condition");      
+    }  
+    public function innerJoin($query){
+        return $this-> connection -> query($query);
     }    
 }
 

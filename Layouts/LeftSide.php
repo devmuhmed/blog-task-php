@@ -1,3 +1,4 @@
+<?php include("viewprofile.php")?>
 <div class="d-none d-md-block col-md-4 col-xl-3 left-wrapper">
             <div class="card rounded">
                 <div class="card-body">
@@ -12,12 +13,11 @@
                                 </svg>
                             </button>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <a class="dropdown-item d-flex align-items-center" href="profile.php?action=edit">
+                                <a class="dropdown-item d-flex align-items-center" href="profile.php?action=edit&id=<?php echo $profile['User_Id']; ?>">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit-2 icon-sm mr-2">
                                         <path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path>
                                     </svg> <span class="">Edit</span></a>
-                                
-                                <a class="dropdown-item d-flex align-items-center" href="profile.php">
+                                    <a class="dropdown-item d-flex align-items-center" href="profile.php"> <!--?id=<?php //echo $profile['User_Id']; ?>-->
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-eye icon-sm mr-2">
                                         <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
                                         <circle cx="12" cy="12" r="3"></circle>
@@ -26,20 +26,20 @@
                         </div>
                     </div>
                     <div class="mt-3">
-                        <label class="tx-11 font-weight-bold mb-0 text-uppercase">Joined:</label>
-                        <p class="text-muted">November 15, 2015</p>
+                        <label class="tx-11 font-weight-bold mb-0 text-uppercase">Full Name</label>
+                        <p class="text-muted"><?php echo $profile['fname']." ".$profile['lname']?></p>
                     </div>
                     <div class="mt-3">
-                        <label class="tx-11 font-weight-bold mb-0 text-uppercase">Lives:</label>
-                        <p class="text-muted">New York, USA</p>
+                        <label class="tx-11 font-weight-bold mb-0 text-uppercase">Address</label>
+                        <p class="text-muted"><?php echo $profile['Address']?></p>
                     </div>
                     <div class="mt-3">
                         <label class="tx-11 font-weight-bold mb-0 text-uppercase">Email:</label>
-                        <p class="text-muted">me@nobleui.com</p>
+                        <p class="text-muted"><?php echo $profile['Email']?></p>
                     </div>
                     <div class="mt-3">
-                        <label class="tx-11 font-weight-bold mb-0 text-uppercase">Website:</label>
-                        <p class="text-muted">www.nobleui.com</p>
+                        <label class="tx-11 font-weight-bold mb-0 text-uppercase">Gender</label>
+                        <p class="text-muted"><?php echo $profile['Gender']?></p>
                     </div>
                     <div class="mt-3 d-flex social-links">
                         <a href="javascript:;" class="btn d-flex align-items-center justify-content-center border mr-2 btn-icon github">
