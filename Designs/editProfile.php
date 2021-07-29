@@ -18,8 +18,7 @@ $updateprofile=$d->fetch(PDO::FETCH_ASSOC);
                     <div class="d-flex flex-column align-items-center text-center">
                         <img src="images/<?php echo $updateprofile['Profile_Img']?>" alt="Admin" class="rounded-circle" width="150">
                         <div class="mt-3">
-                        <input type="file" class="form-control" name="Profile_Img">
-                        
+                        <input type="file" class="form-control" name="Profile_Img">   
                         </div>
                     </div>
                     </div>

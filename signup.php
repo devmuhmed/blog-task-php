@@ -5,12 +5,12 @@
     <!-- Required meta tags-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Colorlib Templates">
-    <meta name="author" content="Colorlib">
-    <meta name="keywords" content="Colorlib Templates">
+    <meta name="description" content="simple project of facebook by using PHP">
+    <meta name="author" content="Islam Mohamed Omnia Hader Nermin Ashrakat">
+    <meta name="keywords" content="Facbook project">
 
     <!-- Title Page-->
-    <title>Au Register Forms by Colorlib</title>
+    <title>SignUp Form </title>
 
     <!-- Icons font CSS-->
     <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
@@ -25,7 +25,7 @@
     <!-- Main CSS-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link href="Css/main.css" rel="stylesheet" media="all">
-   
+
 </head>
 
 <body>
@@ -87,7 +87,7 @@
                                     <input class="input--style-4" type="email" name="email">
                                 </div>
                             </div>
-                              
+                            
                         </div>
                         <div class="row row-space">
                             <div class="col-2">
@@ -105,19 +105,20 @@
                             <div class="col-8">
                                 <div class="input-group">
                                 
-                                 <input type="file" name="img" class="form-control" id="ControlInput1" name="img">
+                                    <input type="file" name="img" class="form-control" id="ControlInput1" name="img">
                                 </div>
                             </div>
-                          
-                        <div class="row">
-                          <div class="col-2 p-t-15">
-                            <button class="btn btn--radius-2 btn--blue" type="submit" name="signup">signup</button>
-                            
-                          </div>
-                          <div class="col-2 p-t-15">
-                            <button class="btn btn--radius-2 btn--blue" ><a href="login.php">Login</a></button>
-                             
-                          </div>
+                        
+                            <div class="row">
+                                <div class="col-2 p-t-15">
+                                    <button class="btn btn--radius-2 btn--blue" type="submit" name="signup">signup</button>
+                                
+                                </div>
+                                <div class="col-2 p-t-15">
+                                    <a href="login.php" class="btn btn--radius-2 btn--blue">Login</a>
+                                
+                                </div>
+                            </div>
                         </div>
                     </form>
                 </div>
@@ -135,7 +136,7 @@
     <!-- Main JS-->
     <script src="js/global.js"></script>
 
-</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</body>
 
 </html>
 <!-- end document-->

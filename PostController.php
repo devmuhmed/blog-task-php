@@ -7,7 +7,6 @@ session_start();
 //require
 require ("classes/db.php") ;
 require_once("classes/post.php");
-// $current_user = $_COOKIE['id'];
 
 //db connection
 $conn=new db();
@@ -21,7 +20,7 @@ if (isset($_POST['addPost'])){
     $post->body = $_POST['body'];
     $post->date = date("Y-m-d H:i:s");    ;
     $post->image = $_FILES['postImg']['name'];
-   //  $postUserID = $conn->getData("User_Id","users","Username=$current_user")->fetch(PDO::FETCH_ASSOC) ; //$_COOKIE['username'];
+    $postUserID = $conn->getData("User_Id","users","Username='{$_COOKIE['username']}'")->fetch(PDO::FETCH_ASSOC) ; //$_COOKIE['username'];
 
    //  var_dump($postUserID['User_Id']);
 
@@ -29,7 +28,7 @@ if (isset($_POST['addPost'])){
     Body='{$post->body}',  
     Date='{$post->date}',
     Image='{$post->image}',
-    User_Id= {$_COOKIE['userid']}");
+    User_Id= {$postUserID['User_Id']}");
 
      //redirect to view page
      if($conn->getConnection()->lastInsertID()==0){

@@ -1,7 +1,7 @@
 <?php
     
-    require_once"../classes/db.php";
-    require_once"../classes/comment.php";
+    require_once("../classes/db.php");
+    require_once("../classes/comment.php");
     
     
     $post_id= $_GET['post_id'];

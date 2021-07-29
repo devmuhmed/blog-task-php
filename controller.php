@@ -1,7 +1,7 @@
 <?php 
 
 //connection 
-   $conn= new PDO("mysql:host=localhost;dbname=Facebook","root","");
+   $conn= new PDO("mysql:host=localhost;dbname=facebook","root","");
     
 //registeration
 if (isset($_POST['signup'])) {
@@ -14,39 +14,24 @@ if (isset($_POST['signup'])) {
     $Email =testinput($_POST['email']);
     $password=testinput($_POST['password']);
     $confirmPass=testinput($_POST['confirmpass']);
-    
- 
-   // add image to image folder
-   $imgName = $_FILES['img']['name'];
-   $imgtmp =$_FILES['img']['tmp_name'];
-  
-   $imgext = pathinfo($imgName,PATHINFO_EXTENSION);
-
-   $extarr = ['png','jpg','jpeg'];
-
-   if(in_array($imgext,$extarr)){
-       move_uploaded_file($imgtmp,"./images/".$imgName);
-   
-       if (filter_var( $Email, FILTER_VALIDATE_EMAIL) && $password==$confirmPass  ) {
-        
-         $conn->query("insert into users 
-                          set
-                          fname= ' $FirstName',
-                          lname = ' $LastName',
-                          Username = '$Username',
-                          Address ='$Address ',
-                          Email= ' $Email',
-                          Password= '$password',
-                          Gender = '$gender',
-                          Profile_Img='{$_FILES['img']['name']}'               
-                          ");
-        }
-          header("Location:login.php");                
-    } else{
-        header("Location:signup.php");
-    }
-    
-
+    validateImg($_FILES['img']);
+    $img=$_FILES['img']['name'];
+    if (filter_var( $Email, FILTER_VALIDATE_EMAIL) && $password==$confirmPass) {
+       $conn->query("insert into users 
+                        set
+                        fname= ' $FirstName',
+                        lname = ' $LastName',
+                        Username = '$Username',
+                        Address ='$Address ',
+                        Email= ' $Email',
+                        Password= '$password',
+                        Gender = '$gender',
+                        Profile_Img='$img'
+                        ");
+        header("Location:login.php");                
+  } else{
+      header("Location:singup.php");
+  }
   
 }
   //login
@@ -72,5 +57,16 @@ if (isset($_POST['login'])) {
     $stripdata=stripslashes($data);
     $validate= htmlspecialchars($stripdata);
     return $validate;
+}
+
+function validateimg($img){
+  $extension=pathinfo($img['name'],PATHINFO_EXTENSION);
+  $arrtype=['png','jpg','jpeg']; 
+  if(in_array($extension,$arrtype)){  
+      move_uploaded_file($img['tmp_name'],'images/'.$img['name']);
+  }
+  else{
+      echo "choose another type of image";
+  }
 }
 ?>

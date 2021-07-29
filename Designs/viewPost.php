@@ -55,7 +55,8 @@
       
     $post_id = $_GET['id'];
     
-    $query = "select users.fname ,users.lname, users.Profile_Img  , comments.Body , comments.Date from users inner join comments on users.User_Id=comments.User_Id where comments.Post_Id = '$post_id' order by date" ;
+    
+    $query = "select users.Username , users.Profile_Img  , comments.Body , comments.Date from users inner join comments on users.User_Id=comments.User_Id where comments.Post_Id = '$post_id'" ;
         
     $result = $conn -> innerJoin($query);
     $result -> execute();
@@ -66,9 +67,9 @@
   ?>
   <div class='col-md-12 commentsblock border-top '>
     <div class='media mt-5 ms-0'>
-      <div class='media-left'> <img alt='img' src='images/<?=$comment['Profile_Img']?>' style='width:50px; height:50px; border-radius:50% ;' class='media-object'> </a> </div>
+      <div class='media-left'> <img alt='64x64' src='images/<?= $comment['Profile_Img']?>' class='media-object'> </a> </div>
       <div class='media-body'>
-        <h4 class='media-heading'><?php echo "{$comment['fname']} {$comment['lname']}"; ?></h4>
+        <h4 class='media-heading'><?= $comment['Username'] ?></h4>
         <small> <?= $comment['Date'] ?></small>
         <p class="mt-3"><?= $comment['Body'] ?></p>
       </div>
@@ -76,7 +77,7 @@
 
   </div>
   <?php } ?>
-  <div class='col-md-12 border-top py-3'>
+  <div class='col-md-12 border-top'>
     <div class='status-upload'>
       <form method='post' action="comments/addComment.php?post_id=<?= $_GET['id'] ?>&user_id=<?= $user_id ?>">
         <label>Add Comment</label>
